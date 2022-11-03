@@ -48,17 +48,12 @@ alias af="awk -F '\t' '{print NF}'"   #查看文件列数，用\t分隔，最常
 alias wl='wc -l'    #统计行数
 alias hpwd='echo -n "`hostname`:";eval pwd'  #用scp时，展示hostname和pwd
 
-alias cls="clear"   #清屏
-alias du0="du -hs"   #磁盘
-alias du1="du -h -d 1"
-alias du2="du -h -d 2"
-
 alias cman='man -M /usr/local/zhman/share/man/zh_CN'
 # alias nginx='sudo /usr/local/nginx/sbin/nginx'
 #----------------------------
 #git
 #----------------------------
-alias gitys-log='git log --abbrev-commit --decorate --graph --oneline'
+alias git-mylog='git log --abbrev-commit --decorate --graph --oneline'
 #----------------------------
 #creat Trash Mecanics instead of dangerous "rm" cmd
 #----------------------------
@@ -227,17 +222,46 @@ alias clnall='rm -rf filename.tags GTAGS GRTAGS GPATH gtags.files tags *cscope.*
 # -----------------------------------------------
 # powerline
 # -----------------------------------------------
-if [ -f `which powerline-daemon` ];then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    #. /usr/share/powerline/bindings/bash/powerline.sh
-    # . ~/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
-    . /usr/share/powerline/bindings/bash/powerline.sh
-fi
+# if [ -f `which powerline-daemon` ];then
+#     powerline-daemon -q
+#     POWERLINE_BASH_CONTINUATION=1
+#     POWERLINE_BASH_SELECT=1
+#     #. /usr/share/powerline/bindings/bash/powerline.sh
+#     # . ~/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
+#     . /usr/share/powerline/bindings/bash/powerline.sh
+# fi
+
 export TERM="screen-256color"
+# clash
+alias clash_gui='/opt/clash-gui/cfw --no-sandbox&'
+# tmux 
+Tmux() {
+    if [ -n "$1" ]; then
+        SESSION="$1"
+    else
+        SESSION="work"
+    fi
 
-# common command in speicified terminal
-#go to root file of rockchip sdk on A201 board in share file
-alias sshgaea='ssh shawn@gaea'
+    if [ -n "$2" ]; then
+        WORK_DIR="$2"
+    else 
+        WORK_DIR="~/"
+    fi
+    
+    WORK_EXITS=`tmux ls | grep $SESSION | wc -l`
+    if [ $WORK_EXITS -eq 0 ]; then
+        tmux new-session -d -s $SESSION -c $WORK_DIR
+        tmux split-window -h -t $SESSION:1.1
+        tmux split-window -v -t $SESSION:1.2
+        tmux send-keys -t $SESSION:1.1 "tmux list-keys -N" Enter
+        tmux send-keys -t $SESSION:1.2 "htop" C-m
+        tmux send-keys -t $SESSION:1.3 "cd $2 && ls -al" C-m
+        tmux send-keys -t $SESSION:1.3 "tmux resize-pane -U 20" Enter
 
+        tmux select-pane -t 3
+        tmux attach-session -t $SESSION
+    else
+        tmux attach-session -t $SESSION
+    fi
+    
+}

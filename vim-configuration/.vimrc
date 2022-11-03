@@ -1,6 +1,6 @@
-" =============================================================================
+"=============================================================================
 " vim-plug插件管理
-" =============================================================================
+"=============================================================================
 call plug#begin('~/.vim/plugged')
 """""""""""""""""""""""""""""""""""
 """杂项
@@ -20,7 +20,7 @@ Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 " 树形目录插件
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 
-
+Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 """""""""""""""""""""""""""""""""""
 """代码查找和跳转
 """""""""""""""""""""""""""""""""""
@@ -59,7 +59,7 @@ Plug 'w0rp/ale', { 'for': ['s', 'S', 'c', 'h', 'C', 'cpp', 'cc', 'cxx', 'python'
 " 状态栏插件
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Lokaltog/vim-powerline'
+#Plug 'Lokaltog/vim-powerline'
 "　折叠插件
 Plug 'pseewald/vim-anyfold'
 " 主题配色方案
@@ -613,8 +613,8 @@ let g:ale_sign_warning = '⚡'
 " airline.vim + powerline
 """""""""""""""""""""""""""""""
 "powerline的vim路径配置
-"set rtp+=~/.local/lib/python3.8/site-packages/powerline/bindings/vim
-set rtp+=/usr/share/powerline/bindings/vim
+set rtp+=/usr/local/lib/python3.10/dist-packages/powerline/bindings/vim
+"set rtp+=/usr/share/powerline/bindings/vim
 set t_Co=256            " 启用256色
 " 使能airline状态栏扩展
 let g:airline#extensions#ale#enabled = 1
