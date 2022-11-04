@@ -59,7 +59,7 @@ Plug 'w0rp/ale', { 'for': ['s', 'S', 'c', 'h', 'C', 'cpp', 'cc', 'cxx', 'python'
 " 状态栏插件
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-#Plug 'Lokaltog/vim-powerline'
+" Plug 'Lokaltog/vim-powerline'
 "　折叠插件
 Plug 'pseewald/vim-anyfold'
 " 主题配色方案
@@ -720,7 +720,7 @@ func! SetTitle()
         call setline(1,"\#########################################################################")
         call append(line("."), "\# File Name: ".expand("%"))
         call append(line(".")+1, "\# Author: shawn")
-        call append(line(".")+2, "\# mail: shawn@vibe.us")
+        call append(line(".")+2, "\# mail: jmysyf@hotmail.com")
         call append(line(".")+3, "\# Created Time: ".strftime("%c"))
         call append(line(".")+4, "\#########################################################################")
         call append(line(".")+5, "\#!/bin/bash")
@@ -731,7 +731,7 @@ func! SetTitle()
         call append(line(".")+1, "\#########################################################################")
         call append(line(".")+2, "\# File Name: ".expand("%"))
         call append(line(".")+3, "\# Author: shawn")
-        call append(line(".")+4, "\# mail: shawn@vibe.us")
+        call append(line(".")+4, "\# mail: jmysyf@hotmail.com")
         call append(line(".")+5, "\# Created Time: ".strftime("%c"))
         call append(line(".")+6, "\#########################################################################")
         call append(line(".")+7, "")
@@ -740,7 +740,7 @@ func! SetTitle()
         call append(line("."),   "    > File Name: ".expand("%"))
         call append(line(".")+1, "    > Copy Right: Hang Zhou Vibe Technology Co., Ltd. ")
         call append(line(".")+2, "    > Author: shawn")
-        call append(line(".")+3, "    > Mail: shawn@vibe.us ")
+        call append(line(".")+3, "    > Mail: jmysyf@hotmail.com ")
         call append(line(".")+4, "    > Created Time: ".strftime("%c"))
         call append(line(".")+5, " ************************************************************************/")
         call append(line(".")+6, "")

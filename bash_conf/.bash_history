@@ -358,7 +358,7 @@ git branch -m shawn/odas/V0.1_agc shawn/odas/V0.0_simply
 git checkout shawn/odas/V0.1_agc_ 
 git push
 git push vibe shawn/odas/V0.1_agc_ 
-git config --global user.email shawn@vibe.us
+git config --global user.email jmysyf@hotmail.com
 git push vibe shawn/odas/V0.1_agc_ 
 git config --global --list
 git push vibe shawn/odas/V0.1_agc_ 
@@ -434,7 +434,7 @@ git pull
 cat .ssh/vibe_rsa.pub 
 ssh-keygen -h
 ssh-keygen --help
-ssh-keygen -t rsa -C "shawn@vibe.us" -f vibe_rsa
+ssh-keygen -t rsa -C "jmysyf@hotmail.com" -f vibe_rsa
 ls
 cp vibe_rsa* .ssh/
 rm vibe_rsa*
@@ -496,7 +496,7 @@ git checkout shawn/stable_diffusion
 reboot
 git branch 
 git pull
-git config user.email shawn@vibe.us
+git config user.email jmysyf@hotmail.com
 
 git config user.name shawn
 git pull
@@ -642,7 +642,7 @@ git pull vibe master
 git reset --soft HEAD-1
 git checkout 
 git config --list
-git config --global user.email shawn@vibe.us
+git config --global user.email jmysyf@hotmail.com
 git config --list
 git branch 
 git push
@@ -676,7 +676,7 @@ ssh-add -D
 ssh-add -l
 ssh-add -D
 ssh-add -l
-ssh-add shawn@vibe.us
+ssh-add jmysyf@hotmail.com
 git branch 
 git reset --soft HEAD~1
 git stash
@@ -717,7 +717,7 @@ git merge master
 git pull vibe master
 git config user.email
 git checkout -b shawn/odas/hdaec
-git config --global user.email shawn@vibe.us
+git config --global user.email jmysyf@hotmail.com
 cd ../../
 ./vibe_deploy -rb vibe/vibe_odas
 ./vibe_deploy -b vibe/vibe_odas
@@ -1622,7 +1622,7 @@ sshd -h  "~/.ssh/id_rsa_vibe"
 sudo chmod 0600 id_rsa_vibe
 ls -al
 rm id_rsa_vibe*
-ssh-keygen -t rsa -C "shawn@vibe.us"
+ssh-keygen -t rsa -C "jmysyf@hotmail.com"
 ls
 cat id_rsa_vibe.pub 
 ssh-add -l

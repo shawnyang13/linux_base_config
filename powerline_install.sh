@@ -1,15 +1,16 @@
 #########################################################################
-# File Name: powerline4vscode.sh
+# File Name: powerline_install.sh
 # Author: shawn
-# mail: shawn@vibe.us
+# mail: jmysyf@hotmial.com
 # Created Time: Sun 13 Feb 2022 03:19:33 PM CST
 #########################################################################
 #!/bin/bash
+sudo apt update
 sudo apt install powerline
 
 if [ ! -d "~/.fonts" ];then
    mkdir ~/.fonts
 fi
 
-cp ./Menlo-for-Powerline/*  ~/.fonts
+cp ./bash_conf/Menlo-for-Powerline/*  ~/.fonts
 fc-cache -vf ~/.fonts
