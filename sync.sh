@@ -8,4 +8,4 @@
 
 cp ~/.vimrc  vim_conf/vimrc
 cp ~/.bash_aliases  bash_conf/bash_aliases
-cp ~/.tmux.conf  tmux_conf/tmux_conf
+cp ~/.tmux.conf  tmux_conf/tmux.conf

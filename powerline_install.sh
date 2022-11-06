@@ -12,5 +12,5 @@ if [ ! -d "~/.fonts" ];then
    mkdir ~/.fonts
 fi
 
-cp ./bash_conf/Menlo-for-Powerline/*  ~/.fonts
+cp ./bash_conf/fonts/Menlo-for-Powerline/*  ~/.fonts
 fc-cache -vf ~/.fonts

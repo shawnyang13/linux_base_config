@@ -9,10 +9,15 @@
 # install nessary package
 # Powerline is prepared for beautiful bash,vim,tmux interface. And the font of this package is hard to configure, 
 # so I write a script to install it. 
-./powerline_install.sh 
+sh ./powerline_install.sh 
 # config bash
-./bash_conf/bash_conf.sh
+mv ~/.bash_aliases ~/.bash_aliases.bak 
+cp ./bash_conf/bash_aliases ~/.bash_aliases
 # config vim
-./vim_conf/vim_conf.sh
+mv ~/.tmux.conf ~/.tmux.conf.bak
+cp ./tmux_conf/tmux.conf ~/.tmux.conf
+cp -r ./tmux_conf/tmux ~/.tmux
 # config tmux
-./tmux_conf/tmux_conf.sh
+mv ~/.vimrc ~/.vimrc.bak
+cp ./vim_conf/vimrc ~/.vimrc
+cp -r ./vim_conf/vim ~/.vim
